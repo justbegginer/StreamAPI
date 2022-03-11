@@ -6,6 +6,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="StreamAPI.main" options="--add-modules java.base --add-exports java.base/java=ALL-UNNAMED" />
+      <module name="StreamAPI.test" options="--add-modules java.base --add-exports java.base/java=ALL-UNNAMED" />
     </option>
   </component>
 </project>
