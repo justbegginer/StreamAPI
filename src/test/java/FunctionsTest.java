@@ -92,4 +92,32 @@ class FunctionsTest {
         }
         assertEquals(Functions.getAverage(array), 50.5);
     }
+
+    @Test
+    void toUpperString(){
+        List<String> list = new ArrayList<>(5);
+        list.add("dere");
+        list.add("soft");
+        list.add("skills");
+        list.add("rules");
+        List<String> upper = Functions.toUpperString(list);
+        assertEquals("DERE", upper.get(0));
+        assertEquals("SOFT", upper.get(1));
+        assertEquals("SKILLS", upper.get(2));
+        assertEquals("RULES", upper.get(3));
+    }
+
+    @Test
+    void toLowerString(){
+        List<String> list = new ArrayList<>(5);
+        list.add("DERE");
+        list.add("SOFT");
+        list.add("SKILLS");
+        list.add("RULES");
+        List<String> upper = Functions.toLowerString(list);
+        assertEquals("dere", upper.get(0));
+        assertEquals("soft", upper.get(1));
+        assertEquals("skills", upper.get(2));
+        assertEquals("rules", upper.get(3));
+    }
 }
