@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-12T23:25:13" hostname="LAPTOP-02LLFE3C" time="0.045">
+<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-12T23:46:21" hostname="LAPTOP-02LLFE3C" time="0.04">
   <properties/>
-  <testcase name="getAverage()" classname="FunctionsTest" time="0.045"/>
-  <system-out><![CDATA[10
-100
-]]></system-out>
+  <testcase name="toLowerString()" classname="FunctionsTest" time="0.04"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

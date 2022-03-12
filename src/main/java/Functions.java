@@ -2,6 +2,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -75,6 +76,21 @@ public class Functions {
                 .reduce((first, second) -> first + second)
                 .get()
                 /array.size();
+    }
+
+    public static List<String> toUpperString(List<String> array){
+        return array
+                .stream()
+                .map((str) -> str.toUpperCase())
+                .collect(Collectors.toList());
+
+    }
+
+    public static List<String> toLowerString(List<String> array){
+        return array
+                .stream()
+                .map((str) -> str.toLowerCase())
+                .collect(Collectors.toList());
     }
 
 }
