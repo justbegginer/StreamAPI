@@ -44,4 +44,39 @@ class FunctionsTest {
         assertEquals(resultList, controlList);
     }
 
+    @Test
+    void sortByName() {
+        List<List<String>> namesList = new ArrayList<>(4);
+        List<String> currentName = new ArrayList<>(2);
+        currentName.add("John");
+        currentName.add("Snow");
+        namesList.add(currentName);
+        currentName = new ArrayList<>(2);
+        currentName.add("Dean");
+        currentName.add("Winchester");
+        namesList.add(currentName);
+        currentName = new ArrayList<>(2);
+        currentName.add("John");
+        currentName.add("Doe");
+        namesList.add(currentName);
+        currentName = new ArrayList<>(2);
+        currentName.add("Dean");
+        currentName.add("Winchesters");
+        namesList.add(currentName);
+        currentName = new ArrayList<>(2);
+        currentName.add("Dean");
+        currentName.add("Winchester");
+        namesList.add(currentName);
+        List<List<String>> resultList = Functions.sortByName(namesList);
+        assertEquals(resultList.get(0).get(0), "Dean");
+        assertEquals(resultList.get(0).get(1), "Winchesters");
+        assertEquals(resultList.get(1).get(0), "Dean");
+        assertEquals(resultList.get(1).get(1), "Winchester");
+        assertEquals(resultList.get(2).get(0), "Dean");
+        assertEquals(resultList.get(2).get(1), "Winchester");
+        assertEquals(resultList.get(3).get(0), "John");
+        assertEquals(resultList.get(3).get(1), "Doe");
+        assertEquals(resultList.get(4).get(0), "John");
+        assertEquals(resultList.get(4).get(1), "Snow");
+    }
 }
