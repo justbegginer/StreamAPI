@@ -79,4 +79,17 @@ class FunctionsTest {
         assertEquals(resultList.get(4).get(0), "John");
         assertEquals(resultList.get(4).get(1), "Snow");
     }
+
+    @Test
+    void getAverage(){
+        List<Double> array = new ArrayList<>(10);
+        for (int i = 1; i <= 10; i++) {
+            array.add((double) i);
+        }
+        assertEquals(Functions.getAverage(array), 5.5);
+        for (int i = 11; i <= 100; i++) {
+            array.add((double) i);
+        }
+        assertEquals(Functions.getAverage(array), 50.5);
+    }
 }

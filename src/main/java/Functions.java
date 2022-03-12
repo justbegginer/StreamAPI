@@ -67,4 +67,14 @@ public class Functions {
                 .sorted(comparator)
                 .collect(Collectors.toList());
     }
+
+
+    public static Double getAverage(List<Double> array){
+        return array
+                .stream()
+                .reduce((first, second) -> first + second)
+                .get()
+                /array.size();
+    }
+
 }
