@@ -93,4 +93,14 @@ public class Functions {
                 .collect(Collectors.toList());
     }
 
+    public static List<String> allStringsStartingWithCharacter(List<String> array, Character character){
+        //return array with all Strings starting with character
+        Predicate<String> func = (str) -> Character.toString(str.charAt(0)).toUpperCase().
+                equals(Character.toString(character).toUpperCase());
+        return array
+                .stream()
+                .filter(func)
+                .collect(Collectors.toList());
+    }
+
 }
