@@ -1,8 +1,4 @@
-//import java.*;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -101,6 +97,38 @@ public class Functions {
                 .stream()
                 .filter(func)
                 .collect(Collectors.toList());
+    }
+
+    public static Integer sumOfAllEven(List<Integer> array){
+        List<Integer> listOfEven = array
+                .stream()
+                .filter(integer -> (integer%2==0))
+                .collect(Collectors.toList());
+        if (array.size() == 0){
+            return 0;
+        }
+        else{
+            return listOfEven
+                    .stream()
+                    .reduce(Integer::sum)
+                    .get();
+        }
+    }
+
+    public static Integer sumOfAllOdd(List<Integer> array){
+        List<Integer> listOfOdd = array
+                .stream()
+                .filter(integer -> (integer%2==1))
+                .collect(Collectors.toList());
+        if (array.size() == 0){
+            return 0;
+        }
+        else{
+            return listOfOdd
+                    .stream()
+                    .reduce(Integer::sum)
+                    .get();
+        }
     }
 
 }
