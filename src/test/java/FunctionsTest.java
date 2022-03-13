@@ -136,4 +136,21 @@ class FunctionsTest {
         assertEquals(list.get(2), "soft");
         assertEquals(list.get(3), "skills");
     }
+
+    @Test
+    void sumOfAllEvenAndOdd(){
+        List<Integer> list = new ArrayList<>(7);
+        list.add(34);
+        list.add(99);
+        list.add(100);
+        list.add(3);
+        list.add(11);
+        list.add(1000);
+        list.add(66);
+        assertEquals(Functions.sumOfAllEven(list), 1200);
+        assertEquals(Functions.sumOfAllOdd(list), 113);
+        list = new ArrayList<>();
+        assertEquals(Functions.sumOfAllOdd(list), 0);
+        assertEquals(Functions.sumOfAllEven(list), 0);
+    }
 }
