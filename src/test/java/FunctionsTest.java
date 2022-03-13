@@ -120,4 +120,20 @@ class FunctionsTest {
         assertEquals("skills", upper.get(2));
         assertEquals("rules", upper.get(3));
     }
+
+    @Test
+    void allStringsStartingWithCharacter(){
+        List<String> list = new ArrayList<>(6);
+        list.add("DERE");
+        list.add("SOFT");
+        list.add("SKILLS");
+        list.add("RULES");
+        list.add("soft");
+        list.add("skills");
+        list = Functions.allStringsStartingWithCharacter(list, 's');
+        assertEquals(list.get(0), "SOFT");
+        assertEquals(list.get(1), "SKILLS");
+        assertEquals(list.get(2), "soft");
+        assertEquals(list.get(3), "skills");
+    }
 }
