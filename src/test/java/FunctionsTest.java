@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 //import java.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class FunctionsTest {
 
@@ -177,5 +179,27 @@ class FunctionsTest {
     void returnAllInRange(){
         List<Integer> list = Arrays.asList(1, 4, 16, 49, 64, 81, 100);
         assertEquals(Functions.returnAllInRange(list,10,70), Arrays.asList(16, 49, 64));
+    }
+    @Test
+    void RandomEven(){
+        List<Integer> list = Functions.randomEven(100);
+        for (int i = 0; i < list.size(); i++) {
+            assertTrue(list.get(i)%2 == 0);
+        }
+    }
+    @Test
+    void RandomOdd(){
+        List<Integer> list = Functions.randomOdd(100);
+        for (int i = 0; i < list.size(); i++) {
+            assertTrue(list.get(i)%2 == 1);
+        }
+    }
+    @Test
+    void listOfBiggest(){
+        List<Integer> list = Arrays.asList(1, 2, 3, -100, -200, 298, 198, 1000, 1001, 11, 22, 123, 1234);
+        assertEquals(Functions.listOfBiggest(list, 4), Arrays.asList(1234, 1001, 1000, 298));
+        assertEquals(Functions.listOfBiggest(list, 14),
+                Arrays.asList(1, 2, 3, -100, -200, 298, 198, 1000, 1001, 11, 22, 123, 1234)
+                        .stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
     }
 }
