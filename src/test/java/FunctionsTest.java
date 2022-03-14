@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 //import java.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 class FunctionsTest {
@@ -152,5 +153,29 @@ class FunctionsTest {
         list = new ArrayList<>();
         assertEquals(Functions.sumOfAllOdd(list), 0);
         assertEquals(Functions.sumOfAllEven(list), 0);
+    }
+
+    @Test
+    void forEveryUniqueMakeSquare(){
+        List<Integer> list = Arrays.asList(1 , 2, 3, 3, 4, 5, 6, 5, 6, 7, 8, 9, 10);
+        List<Integer> controlList = Arrays.asList(1, 4, 16, 49, 64, 81, 100);
+        list = Functions.forEveryUniqueMakeSquare(list);
+        assertEquals(list, controlList);
+    }
+
+    @Test
+    void returnAllMoreThanNumber(){
+        List<Integer> list = Arrays.asList(1, 4, 16, 49, 64, 81, 100);
+        assertEquals(Functions.returnAllMoreThanNumber(list,25), Arrays.asList(49, 64, 81, 100));
+    }
+    @Test
+    void returnAllLessThanNumber(){
+        List<Integer> list = Arrays.asList(1, 4, 16, 49, 64, 81, 100);
+        assertEquals(Functions.returnAllLessThanNumber(list,50), Arrays.asList(1, 4, 16, 49));
+    }
+    @Test
+    void returnAllInRange(){
+        List<Integer> list = Arrays.asList(1, 4, 16, 49, 64, 81, 100);
+        assertEquals(Functions.returnAllInRange(list,10,70), Arrays.asList(16, 49, 64));
     }
 }
