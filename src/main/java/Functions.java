@@ -131,4 +131,24 @@ public class Functions {
         }
     }
 
+    public static  List<Integer> forEveryUniqueMakeSquare(List<Integer> ints){
+        return ints.stream()
+                .filter(n -> Collections.frequency(ints, n) == 1)
+                .map(n -> n*n)
+                .collect(Collectors.toList());
+    }
+
+    public static  List<Integer> returnAllMoreThanNumber(List<Integer> array, Integer number){
+         return array.stream()
+                 .filter(n -> n>number )
+                 .collect(Collectors.toList());
+    }
+    public static List<Integer> returnAllLessThanNumber(List<Integer> array, Integer number){
+        return array.stream()
+                .filter(n -> n<number)
+                .collect(Collectors.toList());
+    }
+    public static List<Integer> returnAllInRange(List<Integer> array, Integer min, Integer max){
+        return returnAllMoreThanNumber(returnAllLessThanNumber(array, max), min);
+    }
 }

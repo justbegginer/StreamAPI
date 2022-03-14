@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-13T09:51:26" hostname="LAPTOP-02LLFE3C" time="0.034">
+<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-14T10:15:28" hostname="LAPTOP-02LLFE3C" time="0.043">
   <properties/>
-  <testcase name="sumOfAllEvenAndOdd()" classname="FunctionsTest" time="0.034"/>
+  <testcase name="returnAllInRange()" classname="FunctionsTest" time="0.043"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
