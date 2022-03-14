@@ -1,6 +1,7 @@
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Functions {
 
@@ -150,5 +151,29 @@ public class Functions {
     }
     public static List<Integer> returnAllInRange(List<Integer> array, Integer min, Integer max){
         return returnAllMoreThanNumber(returnAllLessThanNumber(array, max), min);
+    }
+
+    public static List<Integer> randomEven(int count){
+        return Stream.
+                generate(new Random()::nextInt)
+                .filter((number) -> number%2 == 0)
+                .limit(count)
+                .collect(Collectors.toList());
+    }
+
+    public static List<Integer> randomOdd(int count){
+        return Stream.
+                generate(new Random()::nextInt)
+                .filter((number) -> number%2 == 1)
+                .limit(count)
+                .collect(Collectors.toList());
+    }
+
+    public static List<Integer> listOfBiggest(List<Integer> array, int count){
+        return array
+                .stream()
+                .sorted(Comparator.reverseOrder())
+                .limit(count)
+                .collect(Collectors.toList());
     }
 }
