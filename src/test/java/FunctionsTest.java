@@ -3,10 +3,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 //import java.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class FunctionsTest {
@@ -201,5 +198,15 @@ class FunctionsTest {
         assertEquals(Functions.listOfBiggest(list, 14),
                 Arrays.asList(1, 2, 3, -100, -200, 298, 198, 1000, 1001, 11, 22, 123, 1234)
                         .stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
+    }
+    @Test
+    void getWordByCharacter(){
+        List<String> list = Arrays.asList("Adam", "john", "james", "andrey", "vasya", "matvei", "nikita");
+        Map<Character, String> map = Functions.getWordsByCharacter(list);
+        assertEquals(map.get('a'), "Adam andrey");
+        assertEquals(map.get('j'), "john james");
+        assertEquals(map.get('v'), "vasya");
+        assertEquals(map.get('m'), "matvei");
+        assertEquals(map.get('n'), "nikita");
     }
 }
