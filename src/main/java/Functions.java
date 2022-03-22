@@ -1,3 +1,4 @@
+import java.time.temporal.ChronoField;
 import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -175,5 +176,13 @@ public class Functions {
                 .sorted(Comparator.reverseOrder())
                 .limit(count)
                 .collect(Collectors.toList());
+    }
+
+    public static Map<Character, String> getWordsByCharacter(List<String> array){ // get Map <first letter of word,
+        // words starting with this letter divides by whitespaces>
+        return array
+                .stream()
+                .collect(Collectors.toMap(key -> Character.toString(key.charAt(0)).
+                        toLowerCase().charAt(0), value -> value, (first,second) -> first+ " " + second));
     }
 }
