@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.time.temporal.ChronoField;
 import java.util.*;
 import java.util.function.Predicate;
@@ -187,5 +188,22 @@ public class Functions {
         return words
                 .stream()
                 .collect(Collectors.toMap(key -> key, value -> 1, (first, second) -> first + 1 ));
+    }
+
+    public static Integer countOfLetters(List<String> array){
+        return array
+                .stream()
+                .reduce((first, second) -> first+second)
+                .get()
+                .length();
+    }
+
+    public static List<Long> listOfSquareOfNumbers(long from, long to){
+        return Stream
+                .iterate(from, n -> n+1)
+                .limit(to-from)
+                .map(n-> n*n)
+                .toList();
+
     }
 }

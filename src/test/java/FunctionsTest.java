@@ -219,4 +219,18 @@ class FunctionsTest {
         assertEquals(map.get("regex"), 2);
         assertEquals(map.get("stream"), 4);
     }
+
+    @Test
+    void countOfLetters(){
+        List<String> list = Arrays.asList("hello", "world", "pal", "nice", "to meet", "you");
+        System.out.println(Functions.countOfLetters(list));
+    }
+
+    @Test
+    void listOfSquareOfNumbers(){
+        List<Long> list = Functions.listOfSquareOfNumbers(1, 10000000);
+        for (int i = 0; i < list.size(); i++) {
+            assertEquals(list.get(i), (long) (i + 1) *(i+1));
+        }
+    }
 }
