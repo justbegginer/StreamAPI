@@ -1,6 +1,7 @@
 import java.math.BigInteger;
 import java.time.temporal.ChronoField;
 import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -205,5 +206,19 @@ public class Functions {
                 .map(n-> n*n)
                 .toList();
 
+    }
+
+    public static String join(List<String> strings, String joiner){
+        return strings
+                .stream()
+                .reduce((first, second) -> first+joiner+ second)
+                .orElse("");
+    }
+
+    public static Integer getNumberFromListByOperation(List<Integer> list, BinaryOperator<Integer> predicate){
+        return list
+                .stream()
+                .reduce(predicate)//use operator, to do sum or another binary operation
+                .get();
     }
 }

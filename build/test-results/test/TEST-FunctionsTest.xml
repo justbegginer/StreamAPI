@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-27T15:26:28" hostname="MYBREAD" time="1.101">
+<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-27T15:50:03" hostname="MYBREAD" time="0.036">
   <properties/>
-  <testcase name="listOfSquareOfNumbers()" classname="FunctionsTest" time="1.101"/>
+  <testcase name="getNumberFromListByOperation()" classname="FunctionsTest" time="0.036"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
