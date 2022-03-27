@@ -71,7 +71,7 @@ public class Functions {
         return array
                 .stream()
                 .reduce(Double::sum)
-                .get()
+                .orElse(0.)
                 /array.size();
     }
 
@@ -92,8 +92,8 @@ public class Functions {
 
     public static List<String> allStringsStartingWithCharacter(List<String> array, Character character){
         //return array with all Strings starting with character
-        Predicate<String> func = (str) -> Character.toString(str.charAt(0)).toUpperCase().
-                equals(Character.toString(character).toUpperCase());
+        Predicate<String> func = (str) -> Character.toString(str.charAt(0)).
+                equalsIgnoreCase(Character.toString(character));
         return array
                 .stream()
                 .filter(func)
@@ -101,34 +101,19 @@ public class Functions {
     }
 
     public static Integer sumOfAllEven(List<Integer> array){
-        List<Integer> listOfEven = array
+        return array
                 .stream()
                 .filter(integer -> (integer % 2 == 0))
-                .toList();
-        if (array.size() == 0){
-            return 0;
-        }
-        else{
-            return listOfEven
-                    .stream()
-                    .reduce(Integer::sum)
-                    .get();
-        }
+                .reduce(Integer::sum)
+                .orElse(0);
     }
 
     public static Integer sumOfAllOdd(List<Integer> array){
-        List<Integer> listOfOdd = array
+        return array
                 .stream()
-                .filter(integer -> (integer % 2 == 1)).toList();
-        if (array.size() == 0){
-            return 0;
-        }
-        else{
-            return listOfOdd
-                    .stream()
-                    .reduce(Integer::sum)
-                    .get();
-        }
+                .filter(integer -> (integer % 2 == 1))
+                .reduce(Integer::sum)
+                .orElse(0);
     }
 
     public static  List<Integer> forEveryUniqueMakeSquare(List<Integer> ints){
@@ -194,9 +179,9 @@ public class Functions {
     public static Integer countOfLetters(List<String> array){
         return array
                 .stream()
-                .reduce((first, second) -> first+second)
-                .get()
-                .length();
+                .mapToInt(String::length)
+                .reduce(Integer::sum)
+                .orElse(0);
     }
 
     public static List<Long> listOfSquareOfNumbers(long from, long to){
@@ -219,6 +204,6 @@ public class Functions {
         return list
                 .stream()
                 .reduce(predicate)//use operator, to do sum or another binary operation
-                .get();
+                .orElse(0);
     }
 }
