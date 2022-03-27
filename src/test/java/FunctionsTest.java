@@ -91,6 +91,8 @@ class FunctionsTest {
             array.add((double) i);
         }
         assertEquals(Functions.getAverage(array), 50.5);
+        array = new ArrayList<>();
+        assertEquals(Functions.getAverage(array), 0);
     }
 
     @Test
@@ -223,7 +225,9 @@ class FunctionsTest {
     @Test
     void countOfLetters(){
         List<String> list = Arrays.asList("hello", "world", "pal", "nice", "to meet", "you");
-        System.out.println(Functions.countOfLetters(list));
+        assertEquals(Functions.countOfLetters(list), 27);
+        list = new ArrayList<>();
+        assertEquals(Functions.countOfLetters(list), 0);
     }
 
     @Test
@@ -247,5 +251,6 @@ class FunctionsTest {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         assertEquals(Functions.getNumberFromListByOperation(list, Integer::sum), 55);
         assertEquals(Functions.getNumberFromListByOperation(list, (first, second) -> first*second), 3628800);
+        assertEquals(Functions.getNumberFromListByOperation(new ArrayList<>(), Integer::sum), 0);
     }
 }

@@ -68,6 +68,9 @@ public class Functions {
 
 
     public static Double getAverage(List<Double> array){
+        if (array.size() == 0){
+            return 0.;
+        }
         return array
                 .stream()
                 .reduce(Double::sum)
