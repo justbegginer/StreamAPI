@@ -9,11 +9,9 @@ public class Functions {
     public static List<String> isSentenceRight(List<String> arrayList){ // the sentence is correct
         // if his first chart is capital, and ends on . ! ?
         Predicate<String> predicate = (str) ->
-        {
-            return (str.charAt(0) >= 'A' && str.charAt(0) <= 'Z' &&
-                    (str.charAt(str.length()-1) == '.' || str.charAt(str.length()-1) == '!' ||
-                            str.charAt(str.length()-1) == '?'));
-        };
+                (str.charAt(0) >= 'A' && str.charAt(0) <= 'Z' &&
+                        (str.charAt(str.length()-1) == '.' || str.charAt(str.length()-1) == '!' ||
+                                str.charAt(str.length()-1) == '?'));
         return arrayList
                 .stream()
                 .filter(predicate)
@@ -21,8 +19,7 @@ public class Functions {
     }
 
     public static List<Integer> sortByBiggestAbsoluteValue(List<Integer> arrayList){
-        Comparator<Integer> comparator = (left, right) ->
-                Math.abs(left) - Math.abs(right);
+        Comparator<Integer> comparator = Comparator.comparingInt(Math::abs);
         return arrayList.stream()
                 .sorted(comparator)
                 .collect(Collectors.toList());
@@ -71,7 +68,7 @@ public class Functions {
     public static Double getAverage(List<Double> array){
         return array
                 .stream()
-                .reduce((first, second) -> first + second)
+                .reduce(Double::sum)
                 .get()
                 /array.size();
     }
@@ -79,7 +76,7 @@ public class Functions {
     public static List<String> toUpperString(List<String> array){
         return array
                 .stream()
-                .map((str) -> str.toUpperCase())
+                .map(String::toUpperCase)
                 .collect(Collectors.toList());
 
     }
@@ -87,7 +84,7 @@ public class Functions {
     public static List<String> toLowerString(List<String> array){
         return array
                 .stream()
-                .map((str) -> str.toLowerCase())
+                .map(String::toLowerCase)
                 .collect(Collectors.toList());
     }
 
@@ -104,8 +101,8 @@ public class Functions {
     public static Integer sumOfAllEven(List<Integer> array){
         List<Integer> listOfEven = array
                 .stream()
-                .filter(integer -> (integer%2==0))
-                .collect(Collectors.toList());
+                .filter(integer -> (integer % 2 == 0))
+                .toList();
         if (array.size() == 0){
             return 0;
         }
@@ -120,8 +117,7 @@ public class Functions {
     public static Integer sumOfAllOdd(List<Integer> array){
         List<Integer> listOfOdd = array
                 .stream()
-                .filter(integer -> (integer%2==1))
-                .collect(Collectors.toList());
+                .filter(integer -> (integer % 2 == 1)).toList();
         if (array.size() == 0){
             return 0;
         }
