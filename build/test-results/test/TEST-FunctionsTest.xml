@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-14T10:54:11" hostname="LAPTOP-02LLFE3C" time="0.036">
+<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-27T12:05:59" hostname="MYBREAD" time="0.041">
   <properties/>
-  <testcase name="listOfBiggest()" classname="FunctionsTest" time="0.036"/>
+  <testcase name="getCountOfWords()" classname="FunctionsTest" time="0.041"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

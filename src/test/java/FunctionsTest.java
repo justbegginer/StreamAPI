@@ -209,4 +209,14 @@ class FunctionsTest {
         assertEquals(map.get('m'), "matvei");
         assertEquals(map.get('n'), "nikita");
     }
+
+    @Test
+    void getCountOfWords(){
+        List<String> list = Arrays.asList("d", "stream", "stream", "d", "java", "stream", "regex", "regex", "stream");
+        Map<String, Integer> map = Functions.getCountOfWords(list);
+        assertEquals(map.get("d"), 2);
+        assertEquals(map.get("java"), 1);
+        assertEquals(map.get("regex"), 2);
+        assertEquals(map.get("stream"), 4);
+    }
 }

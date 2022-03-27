@@ -185,4 +185,11 @@ public class Functions {
                 .collect(Collectors.toMap(key -> Character.toString(key.charAt(0)).
                         toLowerCase().charAt(0), value -> value, (first,second) -> first+ " " + second));
     }
+
+    public static  Map<String,Integer> getCountOfWords(List<String> words){
+        //return Map<Word, count of his repeating>
+        return words
+                .stream()
+                .collect(Collectors.toMap(key -> key, value -> 1, (first, second) -> first + 1 ));
+    }
 }
