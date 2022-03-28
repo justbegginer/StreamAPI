@@ -173,6 +173,21 @@ public class Functions {
                         toLowerCase().charAt(0), value -> value, (first,second) -> first+ " " + second));
     }
 
+    public static Map<Character, List<String>> getWordsByCharacterInList(List<String> array){
+        // working like previous function, but value is List<String>? not concatenated String
+        return array
+                .stream()
+                .collect(Collectors.toMap(
+                        key -> Character.toString(key.charAt(0)).toLowerCase().charAt(0),
+                        value -> {
+                            ArrayList<String> arrayList =new ArrayList<>() ;
+                            arrayList.add(value);
+                            return  arrayList;},
+                        (first, second) -> {
+                            first.addAll(second);
+                            return first;}));//first.add(second.get(0))
+    }
+
     public static  Map<String,Integer> getCountOfWords(List<String> words){
         //return Map<Word, count of his repeating>
         return words

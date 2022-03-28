@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="FunctionsTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2022-03-27T16:19:44" hostname="MYBREAD" time="1.209">
+<testsuite name="FunctionsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-28T21:17:23" hostname="MYBREAD" time="0.027">
   <properties/>
-  <testcase name="toLowerString()" classname="FunctionsTest" time="0.035"/>
-  <testcase name="isSentenceRight()" classname="FunctionsTest" time="0.003"/>
-  <testcase name="forEveryUniqueMakeSquare()" classname="FunctionsTest" time="0.003"/>
-  <testcase name="toUpperString()" classname="FunctionsTest" time="0.009"/>
-  <testcase name="sortByName()" classname="FunctionsTest" time="0.003"/>
-  <testcase name="returnAllLessThanNumber()" classname="FunctionsTest" time="0.001"/>
-  <testcase name="returnAllMoreThanNumber()" classname="FunctionsTest" time="0.002"/>
-  <testcase name="listOfBiggest()" classname="FunctionsTest" time="0.003"/>
-  <testcase name="returnAllInRange()" classname="FunctionsTest" time="0.001"/>
-  <testcase name="sumOfAllEvenAndOdd()" classname="FunctionsTest" time="0.003"/>
-  <testcase name="sortByBiggestAbsoluteValue()" classname="FunctionsTest" time="0.002"/>
-  <testcase name="join()" classname="FunctionsTest" time="0.015"/>
-  <testcase name="listOfSquareOfNumbers()" classname="FunctionsTest" time="1.082"/>
-  <testcase name="getAverage()" classname="FunctionsTest" time="0.002"/>
-  <testcase name="allStringsStartingWithCharacter()" classname="FunctionsTest" time="0.004"/>
-  <testcase name="RandomOdd()" classname="FunctionsTest" time="0.004"/>
-  <testcase name="getCountOfWords()" classname="FunctionsTest" time="0.003"/>
-  <testcase name="getNumberFromListByOperation()" classname="FunctionsTest" time="0.003"/>
-  <testcase name="RandomEven()" classname="FunctionsTest" time="0.003"/>
-  <testcase name="getWordByCharacter()" classname="FunctionsTest" time="0.005"/>
-  <testcase name="countOfLetters()" classname="FunctionsTest" time="0.003"/>
+  <testcase name="getWordsByCharacterInList()" classname="FunctionsTest" time="0.027"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
