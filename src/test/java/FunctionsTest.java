@@ -213,6 +213,17 @@ class FunctionsTest {
     }
 
     @Test
+    void getWordsByCharacterInList(){
+        List<String> list = Arrays.asList("Adam", "john", "james", "andrey", "vasya", "matvei", "nikita");
+        Map<Character, List<String>> map = Functions.getWordsByCharacterInList(list);
+        assertEquals(map.get('a'), Arrays.asList("Adam", "andrey"));
+        assertEquals(map.get('j'), Arrays.asList("john", "james"));
+        assertEquals(map.get('v'), Arrays.asList("vasya"));
+        assertEquals(map.get('m'), Arrays.asList("matvei"));
+        assertEquals(map.get('n'), Arrays.asList("nikita"));
+    }
+
+    @Test
     void getCountOfWords(){
         List<String> list = Arrays.asList("d", "stream", "stream", "d", "java", "stream", "regex", "regex", "stream");
         Map<String, Integer> map = Functions.getCountOfWords(list);
