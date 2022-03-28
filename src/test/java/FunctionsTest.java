@@ -253,4 +253,18 @@ class FunctionsTest {
         assertEquals(Functions.getNumberFromListByOperation(list, (first, second) -> first*second), 3628800);
         assertEquals(Functions.getNumberFromListByOperation(new ArrayList<>(), Integer::sum), 0);
     }
+
+    @Test
+    void generateNSymbols(){
+        assertEquals(Functions.generateNSymbols("?", 5), "?????");
+        assertEquals(Functions.generateNSymbols("ab", 3), "ababab");
+        assertEquals(Functions.generateNSymbols("", 10), "");
+        assertEquals(Functions.generateNSymbols("a", 0), "");
+    }
+
+    @Test
+    void listOfStringToInt(){
+        assertEquals(Functions.listOfStringToInt(Arrays.asList("1", "2", "10")), Arrays.asList(1, 2, 10));
+        assertEquals(Functions.listOfStringToInt(Arrays.asList("123", "234a", "a")), Arrays.asList(123));
+    }
 }
