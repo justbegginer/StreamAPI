@@ -2,6 +2,7 @@ import java.math.BigInteger;
 import java.time.temporal.ChronoField;
 import java.util.*;
 import java.util.function.BinaryOperator;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -208,5 +209,33 @@ public class Functions {
                 .stream()
                 .reduce(predicate)//use operator, to do sum or another binary operation
                 .orElse(0);
+    }
+
+    public static String generateNSymbols(String character, int n){
+        return Stream
+                .generate(()->character)
+                .limit(n)
+                .reduce((first, second) -> first+second)
+                .orElse("");
+    }
+
+    public static List<Integer> listOfStringToInt(List<String> listString){
+        return listString
+                .stream()
+                .filter((elem) -> notThrowingException(Integer::parseInt, elem))
+                .mapToInt((elem) -> Integer.parseInt(elem))
+                .boxed()
+                .toList();
+
+    }
+
+    private static boolean notThrowingException(Function<String, Integer> function, String param){
+        try{
+            function.apply(param);
+        }
+        catch (Exception e){
+            return false;
+        }
+        return true;
     }
 }
