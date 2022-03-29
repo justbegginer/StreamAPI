@@ -1,11 +1,10 @@
-import java.math.BigInteger;
-import java.time.temporal.ChronoField;
 import java.util.*;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import javafx.util.Pair;
 
 public class Functions {
 
@@ -242,6 +241,20 @@ public class Functions {
                 .boxed()
                 .toList();
 
+    }
+
+    public static List<Integer> getListOfNumberBy(int start, int end, int step){
+        return Stream
+                .iterate(start, number -> number+step)
+                .limit((end - start) / step + 1)
+                .toList();
+    }
+
+    public static List<Integer> makeArrayFromMatrix(List<List<Integer>> matrix){
+        return matrix
+                .stream()
+                .flatMap(list -> list.stream())
+                .toList();
     }
 
     private static boolean notThrowingException(Function<String, Integer> function, String param){
